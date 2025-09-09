@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My App Downloads</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .download-section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .download-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #007cba;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 10px 10px 0;
+            transition: background 0.3s;
+        }
+        .download-btn:hover {
+            background: #005a87;
+        }
+        .version-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #007cba;
+            margin: 15px 0;
+        }
+        .file-list {
+            list-style: none;
+            padding: 0;
+        }
+        .file-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .file-list a {
+            color: #007cba;
+            text-decoration: none;
+        }
+        .file-list a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>My Application Downloads</h1>
+        
+        <div class="download-section">
+            <h2>Latest Release</h2>
+            <div class="version-info">
+                <strong>Version:</strong> 1.0.0<br>
+                <strong>Released:</strong> <span id="releaseDate"></span><br>
+                <strong>Size:</strong> ~50 MB
+            </div>
+            
+            <a href="releases/latest/MyApp-Setup.exe" class="download-btn">
+                📥 Download Installer
+            </a>
+            
+            <h3>All Files</h3>
+            <ul class="file-list">
+                <li><a href="releases/latest/MyApp-Setup.exe">MyApp-Setup.exe</a> - Main installer</li>
+                <li><a href="releases/latest/RELEASES">RELEASES</a> - Update manifest</li>
+                <li><a href="releases/latest/MyApp-1.0.0-full.nupkg">MyApp-1.0.0-full.nupkg</a> - Full package</li>
+            </ul>
+        </div>
+
+        <div class="download-section">
+            <h2>Previous Versions</h2>
+            <ul class="file-list">
+                <li><a href="releases/v0.9.0/">Version 0.9.0</a></li>
+                <li><a href="releases/v0.8.0/">Version 0.8.0</a></li>
+            </ul>
+        </div>
+
+        <div class="download-section">
+            <h2>System Requirements</h2>
+            <ul>
+                <li>Windows 10 or later</li>
+                <li>.NET 8.0 Runtime (included in installer)</li>
+                <li>50 MB free disk space</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Set current date as release date
+        document.getElementById('releaseDate').textContent = new Date().toLocaleDateString();
+    </script>
+</body>
+</html>
